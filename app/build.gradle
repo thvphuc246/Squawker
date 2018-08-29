@@ -40,6 +40,10 @@ dependencies {
 
     // Firebase dependency
     implementation 'com.google.firebase:firebase-messaging:15.0.0'
+
+    //Butter Knife
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 }
 // Apply the Google Services plugin. Make sure to add the google-services.json file in the app
 // folder. You download it from the Firebase console
