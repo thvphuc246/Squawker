@@ -37,13 +37,18 @@ import android.view.MenuItem;
 
 import com.google.firebase.iid.FirebaseInstanceId;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<Cursor> {
 
     private static String LOG_TAG = MainActivity.class.getSimpleName();
     private static final int LOADER_ID_MESSAGES = 0;
 
+    @BindView(R.id.squawks_recycler_view)
     RecyclerView mRecyclerView;
+
     LinearLayoutManager mLayoutManager;
     SquawkAdapter mAdapter;
 
@@ -64,8 +69,7 @@ public class MainActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        mRecyclerView = (RecyclerView) findViewById(R.id.squawks_recycler_view);
+        ButterKnife.bind(this);
 
         // Use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
