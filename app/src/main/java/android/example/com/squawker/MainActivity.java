@@ -92,6 +92,11 @@ public class MainActivity extends AppCompatActivity implements
         // Start the loader
         getSupportLoaderManager().initLoader(LOADER_ID_MESSAGES, null, this);
 
+        Bundle extras = getIntent().getExtras();
+        if (extras != null && extras.containsKey("test")) {
+            Log.d(LOG_TAG, "Contains: " + extras.getString("test"));
+        }
+
         // Get token from the ID Service you created and show it in a log
         String token = FirebaseInstanceId.getInstance().getToken();
         String msg = getString(R.string.message_token_format, token);
